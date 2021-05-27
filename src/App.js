@@ -18,6 +18,7 @@ import QuestionFormPage from './pages/QuestionFormPage'
 import AnswerFormPage from './pages/AnswerFormPage'
 import OwnerQuestionsPage from './pages/OwnerQuestionsPage'
 import { useAuthState } from "react-firebase-hooks/auth";
+import AvatarPage from './pages/AvatarPage';
 
 firebase.initializeApp({
   apiKey: "AIzaSyC09aJakDw2u96sXHP1c5lOHDIstF88MBo",
@@ -51,6 +52,7 @@ const App = () => {
             <Route exact path="/list" component={OwnerQuestionsPage} />
             <Route exact path="/answer/:id" component={AnswerFormPage} />
             <Route exact path="/new" component={QuestionFormPage} />
+            <Route exact path="/info" component={AvatarPage} />
             <Redirect to="/" />
           </Switch>
         </> :
@@ -63,6 +65,7 @@ const App = () => {
             <Route exact path="/questions" component={QuestionsPage} />
             <Route exact path="/question/:id" component={SingleQuestionPage} />
             <Route exact path="/answer/:id" component={AnswerFormPage} />
+            <Route exact path="/info" component={AvatarPage} />
             <Redirect to="/" />
           </Switch>
         </>
